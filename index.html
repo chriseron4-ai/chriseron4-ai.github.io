@@ -47,7 +47,7 @@ color:var(--text);text-decoration:none;letter-spacing:0.05em;
 }
 nav .links{display:flex;gap:1.5rem;align-items:center}
 nav .links a{
-font-family:var(--mono);font-size:11px;color:var(--muted);
+font-family:var(--mono);font-size:11px;color:rgba(232,228,220,0.7);
 text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;
 transition:color .2s;
 }
@@ -175,34 +175,48 @@ text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;
 }
 .author-links a:hover{text-decoration:underline}
 
-/* CHAPTERS */
-.chapter-grid{
-display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem 2rem;
-}
-.chapter-grid .ch{
-display:flex;gap:1rem;padding:0.5rem 0;
-border-bottom:1px solid rgba(30,37,48,0.5);
-}
-.ch-num{font-family:var(--mono);font-size:13px;color:var(--amber);min-width:24px}
-.ch-title{font-family:var(--body);font-size:15px;color:rgba(232,228,220,0.8)}
-.epilogue{
-text-align:center;margin-top:2.5rem;font-family:var(--body);
-font-style:italic;font-size:16px;color:rgba(232,228,220,0.7);
-}
-.epilogue span{font-family:var(--mono);font-size:13px;color:var(--amber);font-style:normal}
-
-/* RESEARCH */
-.research-body{max-width:640px}
-.research-body h3{
+/* THE QUESTION */
+.question-body{max-width:640px}
+.question-body h3{
 font-family:var(--serif);font-size:28px;font-weight:700;
-color:var(--text);margin-bottom:1.5rem;
+color:var(--text);margin-bottom:0.75rem;
 }
-.research-body p{font-size:16px;line-height:1.8;margin-bottom:1.5rem;color:rgba(232,228,220,0.85)}
-.hex-dump{
-font-family:var(--mono);font-size:9px;color:var(--blue);
-opacity:0.3;line-height:1.6;margin-top:3rem;
-word-break:break-all;max-width:480px;
-user-select:none;
+.question-body .subheading{
+font-family:var(--serif);font-style:italic;font-size:16px;
+color:var(--amber);margin-bottom:2rem;line-height:1.7;
+}
+.question-body p{font-size:16px;line-height:1.8;margin-bottom:1.5rem;color:rgba(232,228,220,0.85)}
+.pull-quote{
+border-left:3px solid var(--amber);padding:1.5rem 2rem;
+margin:3rem auto;max-width:640px;
+}
+.pull-quote blockquote{
+font-family:var(--serif);font-size:22px;font-style:italic;
+color:var(--text);line-height:1.6;
+}
+.pull-quote .attribution{
+font-family:var(--mono);font-size:12px;color:var(--muted);
+margin-top:0.75rem;letter-spacing:0.05em;
+}
+.contrast-grid{
+display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;
+margin-top:2.5rem;
+}
+.contrast-box{
+border:1px solid var(--border);padding:1.5rem;
+background:rgba(30,37,48,0.3);
+}
+.contrast-box .box-label{
+font-family:var(--mono);font-size:11px;letter-spacing:0.15em;
+text-transform:uppercase;margin-bottom:1rem;
+}
+.contrast-box .box-label.amber{color:var(--amber)}
+.contrast-box .box-label.blue{color:var(--blue)}
+.contrast-box p{font-size:15px;line-height:1.8;color:rgba(232,228,220,0.8)}
+.closing-line{
+text-align:center;margin-top:3rem;
+font-family:var(--mono);font-size:12px;color:var(--muted);
+letter-spacing:0.1em;
 }
 
 /* CONTACT */
@@ -269,13 +283,12 @@ nav .links.open{display:flex}
 .jacket{grid-template-columns:1fr}
 .author-grid{grid-template-columns:1fr;text-align:center}
 .author-photo{margin:0 auto}
-.chapter-grid{grid-template-columns:1fr 1fr}
+.contrast-grid{grid-template-columns:1fr}
 .details-bar{flex-direction:column;gap:0.75rem}
 .details-bar .divider{display:none}
 section{padding:4rem 1.25rem}
 }
 @media(max-width:480px){
-.chapter-grid{grid-template-columns:1fr}
 .email-form{flex-direction:column}
 }
 </style>
@@ -289,8 +302,9 @@ section{padding:4rem 1.25rem}
 <a href="#book">The Book</a>
 <a href="#excerpt">Excerpt</a>
 <a href="#author">Author</a>
-<a href="#chapters">Chapters</a>
+<a href="#the-question">The Question</a>
 <a href="#contact">Contact</a>
+<a href="lake-effect.html">Lake Effect</a>
 </div>
 </nav>
 
@@ -352,9 +366,10 @@ if it doesn't destroy him first.
 <div class="section-label">// EXCERPT</div>
 <div class="chapter-label">CHAPTER ONE — SOUTHBOUND</div>
 <div class="excerpt-text">
-<p>The Accord smelled like old coffee and carpet. Daniel Murcer had known the smell so long he had stopped noticing it three hours outside Syracuse. The back seat held two cardboard boxes, a duffel bag, and the disorder that accumulates at the end of four years: a lamp without a shade, a damp shower caddy, a framed photograph that had never found a wall and was making another attempt in the dark.</p>
-<p>He had Tracy Kidder in the passenger seat and The Joshua Tree in the deck and four hundred dollars in his wallet, which was the right amount to begin something new with, provided nothing went wrong in the next three days.</p>
-<p>He was twenty-two years old and had a job that started Monday and had not yet learned that these two facts were related.</p>
+<p>The Accord smelled like old coffee and carpet. Daniel Murcer had known the smell so long he had stopped noticing it three hours outside Syracuse. The back seat held two cardboard boxes, a duffel bag, and the disorder that accumulates at the end of four years: a lamp without a shade, a damp shower caddy, a framed photograph that had never found a wall and was making another trip in bubble wrap. The trunk held the serious things: good clothes in a garment bag, textbooks he had promised himself he would read again, and a portfolio of writing clips arranged by date.</p>
+<p>He had left at six-fifteen. It was not quite ten now, and he was somewhere in Pennsylvania, the highway bending through hills made impossibly green by May.</p>
+<p>The radio had been going in and out since the Delaware Water Gap. He'd found a Philadelphia station for a while and then lost it, and now he was on a signal out of somewhere that played Graceland twice in forty minutes, which he didn't mind. He had a copy of The Joshua Tree in the cassette deck but he'd been saving it. He wasn't sure what for.</p>
+<p>The drive had the exact quality of what it was: a border crossing. Behind him was the person he had been, assembled over twenty-two years in pieces he had not chosen. Westchester. An unremarkable high school. Syracuse, which had felt like the whole world while he was inside it and was already flattening into memory. Ahead was whatever came next. He had avoided thinking about it too specifically. Specificity made things either real or frightening, and he did not have time for either.</p>
 </div>
 <hr>
 <div class="chapter-label" style="margin-top:2.5rem">CHAPTER TWO — HAZLETON</div>
@@ -364,6 +379,16 @@ if it doesn't destroy him first.
 <p>"Anything else?"</p>
 <p>He glanced up at the menu board. "Apple pie."</p>
 <p>"Those take a few minutes. I'll bring it over."</p>
+<p>He paid. She made change. The transaction had the clean efficiency of something that had happened a thousand times.</p>
+<p>He took his tray to a window booth and ate facing the Sunoco across the lot, where a man in coveralls worked under the hood of a pickup with the patience of someone who had been there a while and expected to be there longer. The Quarter Pounder was fine. The coffee was better than it had any right to be.</p>
+</div>
+<hr>
+<div class="chapter-label" style="margin-top:2.5rem">CHAPTER FOUR — MILE MARKER 149</div>
+<div class="excerpt-text">
+<p>Daniel ate the apple pie as he drove.</p>
+<p>He needed a napkin around mile marker 149.</p>
+<p>There was a rest stop two miles south. He'd seen the sign. He had the option of waiting, but the pie had gotten onto his thumb and he reached across without thinking and picked up the McDonald's bag from the passenger seat.</p>
+<p>The disk was at the bottom.</p>
 </div>
 <div class="excerpt-fade">
 <a href="#">CONTINUE READING &rarr;</a>
@@ -380,7 +405,7 @@ if it doesn't destroy him first.
 <div class="author-bio">
 <p>Aaron Christopher writes literary thrillers about the spaces between institutional power and individual conscience.</p>
 <p>ONE DISK, his debut novel, is set in Washington, D.C. in May 1987, and draws on research into defense procurement, early computing, government oversight, and the specific weight of decisions made before anyone is watching.</p>
-<p>He is the author of <em>Lake Effect</em>.</p>
+<p>He is the author of <em><a href="lake-effect.html" style="color:var(--amber);text-decoration:none">Lake Effect</a></em>.</p>
 </div>
 <div class="author-links">
 <a href="mailto:contact@placeholder.com">CONTACT</a>
@@ -392,62 +417,30 @@ if it doesn't destroy him first.
 
 <div class="full-rule"></div>
 
-<section id="chapters" class="fade-in">
-<div class="section-label">// THIRTY-SEVEN CHAPTERS</div>
-<div class="chapter-grid">
-<div class="ch"><span class="ch-num">01</span><span class="ch-title">Southbound</span></div>
-<div class="ch"><span class="ch-num">02</span><span class="ch-title">Hazleton</span></div>
-<div class="ch"><span class="ch-num">03</span><span class="ch-title">Recovery</span></div>
-<div class="ch"><span class="ch-num">04</span><span class="ch-title">Mile Marker 149</span></div>
-<div class="ch"><span class="ch-num">05</span><span class="ch-title">Pete's Couch</span></div>
-<div class="ch"><span class="ch-num">06</span><span class="ch-title">Disk Examined</span></div>
-<div class="ch"><span class="ch-num">07</span><span class="ch-title">Sunday in a New City</span></div>
-<div class="ch"><span class="ch-num">08</span><span class="ch-title">First Day</span></div>
-<div class="ch"><span class="ch-num">09</span><span class="ch-title">What Frank Knows</span></div>
-<div class="ch"><span class="ch-num">10</span><span class="ch-title">Piney Branch Road</span></div>
-<div class="ch"><span class="ch-num">11</span><span class="ch-title">Client List</span></div>
-<div class="ch"><span class="ch-num">12</span><span class="ch-title">Girl from Hazleton</span></div>
-<div class="ch"><span class="ch-num">13</span><span class="ch-title">Late Night Visit</span></div>
-<div class="ch"><span class="ch-num">14</span><span class="ch-title">Karen Yuen</span></div>
-<div class="ch"><span class="ch-num">15</span><span class="ch-title">No Physical Evidence</span></div>
-<div class="ch"><span class="ch-num">16</span><span class="ch-title">Tysons Corner</span></div>
-<div class="ch"><span class="ch-num">17</span><span class="ch-title">The Meridian Boy</span></div>
-<div class="ch"><span class="ch-num">18</span><span class="ch-title">Maintenance Window</span></div>
-<div class="ch"><span class="ch-num">19</span><span class="ch-title">Forced Entry</span></div>
-<div class="ch"><span class="ch-num">20</span><span class="ch-title">The Collector</span></div>
-<div class="ch"><span class="ch-num">21</span><span class="ch-title">The Wrong Questions</span></div>
-<div class="ch"><span class="ch-num">22</span><span class="ch-title">Prince William County</span></div>
-<div class="ch"><span class="ch-num">23</span><span class="ch-title">Frank's Memory</span></div>
-<div class="ch"><span class="ch-num">24</span><span class="ch-title">Pete's Story</span></div>
-<div class="ch"><span class="ch-num">25</span><span class="ch-title">The Lock Collection</span></div>
-<div class="ch"><span class="ch-num">26</span><span class="ch-title">Twenty Seconds</span></div>
-<div class="ch"><span class="ch-num">27</span><span class="ch-title">Rehearsal</span></div>
-<div class="ch"><span class="ch-num">28</span><span class="ch-title">Revision</span></div>
-<div class="ch"><span class="ch-num">29</span><span class="ch-title">Going to Press</span></div>
-<div class="ch"><span class="ch-num">30</span><span class="ch-title">Publication</span></div>
-<div class="ch"><span class="ch-num">31</span><span class="ch-title">The Article</span></div>
-<div class="ch"><span class="ch-num">32</span><span class="ch-title">Premature</span></div>
-<div class="ch"><span class="ch-num">33</span><span class="ch-title">Mistakes</span></div>
-<div class="ch"><span class="ch-num">34</span><span class="ch-title">Manassas</span></div>
-<div class="ch"><span class="ch-num">35</span><span class="ch-title">Control</span></div>
-<div class="ch"><span class="ch-num">36</span><span class="ch-title">Statements</span></div>
-<div class="ch"><span class="ch-num">37</span><span class="ch-title">Quiet Systems</span></div>
+<section id="the-question" class="fade-in">
+<div class="section-label">// THE QUESTION</div>
+<div class="question-body">
+<h3>Where Did Ransomware Come From?</h3>
+<div class="subheading">The history says 1989. One Disk asks: what if it started earlier&mdash;and what if only one person understood what it was?</div>
+<p>The first documented ransomware attack is usually dated to 1989: the AIDS Trojan, distributed by Joseph Popp on floppy disks mailed to researchers at the World Health Organization. The program encrypted filenames and demanded payment to restore access. It was crude. It was effective. It changed everything that came after.</p>
+<p>But software doesn't require publication to exist. A sixteen-year-old in Hazleton, Pennsylvania, working alone on an IBM AT with access to technical documentation and enough time, could have built something like CIPHER two years earlier. The architecture was there. The vulnerability was there. What was missing was someone who understood what it was worth.</p>
+<p>ONE DISK is a work of fiction. But it takes seriously a question that the history of cybercrime doesn't answer: what happens when a weapon is invented before the world has a name for it&mdash;and the only person who truly grasps its power is the one who wants to use it?</p>
 </div>
-<div class="epilogue"><span>EPILOGUE</span> &mdash; Southbound</div>
-</section>
-
-<div class="full-rule"></div>
-
-<section id="research" class="fade-in">
-<div class="section-label">// MAY 1987</div>
-<div class="research-body">
-<h3>Period Accuracy</h3>
-<p>ONE DISK is set in May 1987. Every technology, institution, and cultural reference in the novel is period-accurate.</p>
-<p>Daniel uses IBM XT and AT computers. The disk is a 3.5-inch Sony floppy—newer in 1987, consistent with a technically sophisticated teenager. CIPHER's architecture—a two-stage payload hiding a keyfile in sectors outside the FAT directory structure—is technically plausible for 1987 hardware and a programmer working alone.</p>
-<p>The Defense Logistics Agency operated out of Cameron Station, Virginia and leased space at New Carrollton. The GSA scheduling system existed. The House Defense Oversight Subcommittee existed. Defense Systems Weekly is fictional, but the publication category was real.</p>
-<p>Paul Simon's Graceland was released in August 1986. U2's The Joshua Tree was released in March 1987. Both appear in the novel because Daniel Murcer is driving south in May 1987 with the right music for the decade he's about to leave behind.</p>
+<div class="pull-quote">
+<blockquote>&ldquo;The boy had never trusted perfect execution. He had trusted verification.&rdquo;</blockquote>
+<div class="attribution">&mdash; ONE DISK, Chapter 32</div>
 </div>
-<div class="hex-dump" aria-hidden="true">4F 4E 45 20 44 49 53 4B 20 2D 20 43 49 50 48 45 52 20 50 41 59 4C 4F 41 44 20 2D 20 53 45 43 54 4F 52 20 30 78 31 41 33 46 20 2D 20 46 41 54 20 4F 46 46 53 45 54 20 30 30 30 30 3A 30 30 34 30 20 2D 20 4B 45 59 46 49 4C 45 20 48 49 44 44 45 4E 20 2D 20 54 57 4F 20 53 54 41 47 45 20 45 4E 43 52 59 50 54 49 4F 4E 20 2D 20 44 4C 41 20 49 4E 46 52 41 53 54 52 55 43 54 55 52 45 20 2D 20 43 45 52 42 45 52 55 53 20 53 59 53 54 45 4D 53 20 2D 20 4D 41 59 20 31 39 38 37</div>
+<div class="contrast-grid">
+<div class="contrast-box">
+<div class="box-label amber">TOMMY KOWALSKI, 16</div>
+<p>Built CIPHER in his bedroom in Hazleton, Pennsylvania. Two-stage payload. Keyfile hidden outside the FAT directory structure. A timer, not a trigger. He built in a safeguard because he didn't trust perfect execution. He trusted verification. He was right about that.</p>
+</div>
+<div class="contrast-box">
+<div class="box-label blue">RICHARD VANCE</div>
+<p>CEO, Cerberus Systems. Tysons Corner, Virginia. He collected locks. He understood, better than anyone in the room, what the boy had actually built. Not a program. Not a vulnerability. A key that worked on every door at once. He called it an asset.</p>
+</div>
+</div>
+<div class="closing-line">CIPHER is fictional. The question it raises is not.</div>
 </section>
 
 <div class="full-rule"></div>
@@ -456,8 +449,7 @@ if it doesn't destroy him first.
 <div class="section-label">// CONTACT</div>
 <h3>Stay in the Loop</h3>
 <p>For updates on publication, ARC availability, and new work from Aaron Christopher.</p>
-<form class="email-form" name="newsletter" method="POST" data-netlify="true">
-<input type="hidden" name="form-name" value="newsletter">
+<form class="email-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
 <input type="email" name="email" placeholder="your@email.com" required>
 <button type="submit">NOTIFY ME</button>
 </form>
@@ -503,15 +495,18 @@ else a.classList.remove('active');
 });
 });
 
-// Form success
+// Form success (Formspree)
 var form=document.querySelector('.email-form');
 if(form){
 form.addEventListener('submit',function(e){
 e.preventDefault();
 var data=new FormData(form);
-fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()})
-.then(function(){form.innerHTML='<div class="form-success">You\'re on the list.</div>'})
-.catch(function(){form.innerHTML='<div class="form-success">You\'re on the list.</div>'});
+fetch(form.action,{method:'POST',body:data,headers:{'Accept':'application/json'}})
+.then(function(r){
+if(r.ok){form.innerHTML='<div class="form-success">You\'re on the list.</div>'}
+else{form.innerHTML='<div class="form-success" style="color:var(--blue)">Something went wrong. Please try again.</div>'}
+})
+.catch(function(){form.innerHTML='<div class="form-success" style="color:var(--blue)">Something went wrong. Please try again.</div>'});
 });
 }
 </script>
