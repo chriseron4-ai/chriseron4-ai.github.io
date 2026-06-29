@@ -175,22 +175,6 @@ text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;
 }
 .author-links a:hover{text-decoration:underline}
 
-/* CHAPTERS */
-.chapter-grid{
-display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem 2rem;
-}
-.chapter-grid .ch{
-display:flex;gap:1rem;padding:0.5rem 0;
-border-bottom:1px solid rgba(30,37,48,0.5);
-}
-.ch-num{font-family:var(--mono);font-size:13px;color:var(--amber);min-width:24px}
-.ch-title{font-family:var(--body);font-size:15px;color:rgba(232,228,220,0.8)}
-.epilogue{
-text-align:center;margin-top:2.5rem;font-family:var(--body);
-font-style:italic;font-size:16px;color:rgba(232,228,220,0.7);
-}
-.epilogue span{font-family:var(--mono);font-size:13px;color:var(--amber);font-style:normal}
-
 /* RESEARCH */
 .research-body{max-width:640px}
 .research-body h3{
@@ -269,13 +253,11 @@ nav .links.open{display:flex}
 .jacket{grid-template-columns:1fr}
 .author-grid{grid-template-columns:1fr;text-align:center}
 .author-photo{margin:0 auto}
-.chapter-grid{grid-template-columns:1fr 1fr}
 .details-bar{flex-direction:column;gap:0.75rem}
 .details-bar .divider{display:none}
 section{padding:4rem 1.25rem}
 }
 @media(max-width:480px){
-.chapter-grid{grid-template-columns:1fr}
 .email-form{flex-direction:column}
 }
 </style>
@@ -289,7 +271,6 @@ section{padding:4rem 1.25rem}
 <a href="#book">The Book</a>
 <a href="#excerpt">Excerpt</a>
 <a href="#author">Author</a>
-<a href="#chapters">Chapters</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
@@ -399,52 +380,6 @@ if it doesn't destroy him first.
 </div>
 </div>
 </div>
-</section>
-
-<div class="full-rule"></div>
-
-<section id="chapters" class="fade-in">
-<div class="section-label">// THIRTY-SEVEN CHAPTERS</div>
-<div class="chapter-grid">
-<div class="ch"><span class="ch-num">01</span><span class="ch-title">Southbound</span></div>
-<div class="ch"><span class="ch-num">02</span><span class="ch-title">Hazleton</span></div>
-<div class="ch"><span class="ch-num">03</span><span class="ch-title">Recovery</span></div>
-<div class="ch"><span class="ch-num">04</span><span class="ch-title">Mile Marker 149</span></div>
-<div class="ch"><span class="ch-num">05</span><span class="ch-title">Pete's Couch</span></div>
-<div class="ch"><span class="ch-num">06</span><span class="ch-title">Disk Examined</span></div>
-<div class="ch"><span class="ch-num">07</span><span class="ch-title">Sunday in a New City</span></div>
-<div class="ch"><span class="ch-num">08</span><span class="ch-title">First Day</span></div>
-<div class="ch"><span class="ch-num">09</span><span class="ch-title">What Frank Knows</span></div>
-<div class="ch"><span class="ch-num">10</span><span class="ch-title">Piney Branch Road</span></div>
-<div class="ch"><span class="ch-num">11</span><span class="ch-title">Client List</span></div>
-<div class="ch"><span class="ch-num">12</span><span class="ch-title">Girl from Hazleton</span></div>
-<div class="ch"><span class="ch-num">13</span><span class="ch-title">Late Night Visit</span></div>
-<div class="ch"><span class="ch-num">14</span><span class="ch-title">Karen Yuen</span></div>
-<div class="ch"><span class="ch-num">15</span><span class="ch-title">No Physical Evidence</span></div>
-<div class="ch"><span class="ch-num">16</span><span class="ch-title">Tysons Corner</span></div>
-<div class="ch"><span class="ch-num">17</span><span class="ch-title">The Meridian Boy</span></div>
-<div class="ch"><span class="ch-num">18</span><span class="ch-title">Maintenance Window</span></div>
-<div class="ch"><span class="ch-num">19</span><span class="ch-title">Forced Entry</span></div>
-<div class="ch"><span class="ch-num">20</span><span class="ch-title">The Collector</span></div>
-<div class="ch"><span class="ch-num">21</span><span class="ch-title">The Wrong Questions</span></div>
-<div class="ch"><span class="ch-num">22</span><span class="ch-title">Prince William County</span></div>
-<div class="ch"><span class="ch-num">23</span><span class="ch-title">Frank's Memory</span></div>
-<div class="ch"><span class="ch-num">24</span><span class="ch-title">Pete's Story</span></div>
-<div class="ch"><span class="ch-num">25</span><span class="ch-title">The Lock Collection</span></div>
-<div class="ch"><span class="ch-num">26</span><span class="ch-title">Twenty Seconds</span></div>
-<div class="ch"><span class="ch-num">27</span><span class="ch-title">Rehearsal</span></div>
-<div class="ch"><span class="ch-num">28</span><span class="ch-title">Revision</span></div>
-<div class="ch"><span class="ch-num">29</span><span class="ch-title">Going to Press</span></div>
-<div class="ch"><span class="ch-num">30</span><span class="ch-title">Publication</span></div>
-<div class="ch"><span class="ch-num">31</span><span class="ch-title">The Article</span></div>
-<div class="ch"><span class="ch-num">32</span><span class="ch-title">Premature</span></div>
-<div class="ch"><span class="ch-num">33</span><span class="ch-title">Mistakes</span></div>
-<div class="ch"><span class="ch-num">34</span><span class="ch-title">Manassas</span></div>
-<div class="ch"><span class="ch-num">35</span><span class="ch-title">Control</span></div>
-<div class="ch"><span class="ch-num">36</span><span class="ch-title">Statements</span></div>
-<div class="ch"><span class="ch-num">37</span><span class="ch-title">Quiet Systems</span></div>
-</div>
-<div class="epilogue"><span>EPILOGUE</span> &mdash; Southbound</div>
 </section>
 
 <div class="full-rule"></div>
