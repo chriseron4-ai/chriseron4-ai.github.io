@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Disk — Aaron Christopher</title>
+<meta name="description" content="A disk he wasn't supposed to find. A story they will kill to bury. A literary techno-thriller. May 1987. Washington, D.C.">
+<meta property="og:title" content="One Disk — Aaron Christopher">
+<meta property="og:description" content="A disk he wasn't supposed to find. A story they will kill to bury. A literary techno-thriller. May 1987. Washington, D.C.">
+<meta property="og:image" content="https://chriseron4-ai.github.io/assets/images/OneDisk1.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chriseron4-ai.github.io">
+<link rel="icon" type="image/png" href="assets/images/OneDisk1.png">
+<link rel="preload" href="assets/images/OneDisk1.png" as="image">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,400;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#0a0c10;--text:#e8e4dc;--amber:#c8a96e;--blue:#4a7fa5;
+--green:#2a3d2a;--border:#1e2530;--muted:#4a5568;
+--serif:'Playfair Display',Georgia,serif;
+--body:'Source Serif 4',Georgia,serif;
+--mono:'JetBrains Mono','Courier New',monospace;
+}
+html{scroll-behavior:smooth}
+body{
+background:var(--bg);color:var(--text);font-family:var(--body);
+line-height:1.7;-webkit-font-smoothing:antialiased;
+}
+body::before{
+content:'';position:fixed;inset:0;z-index:-1;
+background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+pointer-events:none;
+}
+
+/* NAV */
+nav{
+position:fixed;top:0;left:0;right:0;z-index:100;
+background:rgba(10,12,16,0.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+border-bottom:1px solid var(--border);
+display:flex;align-items:center;justify-content:space-between;
+padding:0 2rem;height:56px;
+}
+nav .wordmark{
+font-family:var(--serif);font-weight:900;font-size:1.1rem;
+color:var(--text);text-decoration:none;letter-spacing:0.05em;
+}
+nav .links{display:flex;gap:1.5rem;align-items:center}
+nav .links a{
+font-family:var(--mono);font-size:11px;color:var(--muted);
+text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;
+transition:color .2s;
+}
+nav .links a:hover,nav .links a.active{color:var(--amber)}
+.nav-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+
+/* HERO */
+.hero{
+position:relative;height:100vh;min-height:600px;
+display:flex;flex-direction:column;justify-content:center;align-items:center;
+text-align:center;overflow:hidden;
+}
+.hero-bg{
+position:absolute;inset:0;
+background:url('assets/images/OneDisk1.png') center/cover no-repeat;
+}
+.hero-bg::after{
+content:'';position:absolute;inset:0;
+background:rgba(10,12,16,0.55);
+}
+.hero-content{position:relative;z-index:1;padding:0 1.5rem}
+.hero-tagline{
+font-family:var(--mono);font-size:13px;letter-spacing:0.15em;
+color:var(--amber);text-transform:uppercase;margin-bottom:2rem;
+line-height:2;
+}
+.hero-title{
+font-family:var(--serif);font-weight:900;font-size:96px;
+color:var(--text);text-shadow:0 2px 40px rgba(0,0,0,0.5);
+line-height:1.05;margin-bottom:0.5rem;
+}
+.hero-subtitle{
+font-family:var(--serif);font-style:italic;font-size:18px;
+color:var(--amber);margin-bottom:0.75rem;
+}
+.hero-author{
+font-family:var(--mono);font-size:14px;letter-spacing:0.2em;
+color:var(--text);margin-bottom:2.5rem;
+}
+.hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{
+font-family:var(--mono);font-size:12px;letter-spacing:0.15em;
+text-transform:uppercase;padding:14px 28px;text-decoration:none;
+transition:all .2s;display:inline-block;
+}
+.btn-primary{background:var(--amber);color:var(--bg);border:1px solid var(--amber)}
+.btn-primary:hover{background:#d4b87a}
+.btn-secondary{background:transparent;color:var(--amber);border:1px solid var(--amber)}
+.btn-secondary:hover{background:rgba(200,169,110,0.1)}
+.scroll-indicator{
+position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+animation:bounce 2s infinite;z-index:1;
+}
+.scroll-indicator svg{width:24px;height:24px;stroke:var(--amber);opacity:0.6}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+/* SECTIONS */
+section{padding:6rem 2rem;max-width:960px;margin:0 auto}
+.section-label{
+font-family:var(--mono);font-size:11px;color:var(--blue);
+text-transform:uppercase;letter-spacing:0.15em;margin-bottom:2rem;
+}
+.section-rule{width:60px;height:1px;background:var(--amber);margin:2.5rem auto}
+hr{border:none;height:1px;background:var(--border);margin:4rem 0}
+.full-rule{max-width:960px;margin:0 auto;height:1px;background:var(--border)}
+
+/* THE BOOK */
+.logline{
+font-family:var(--serif);font-size:22px;color:var(--text);
+line-height:1.7;max-width:680px;margin:0 auto;text-align:center;
+}
+.jacket{
+display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;
+margin-top:2.5rem;
+}
+.jacket p{font-size:16px;line-height:1.8;color:rgba(232,228,220,0.85)}
+.details-bar{
+display:flex;justify-content:center;gap:2rem;margin-top:3rem;
+font-family:var(--mono);font-size:12px;color:var(--blue);
+}
+.details-bar span{display:flex;align-items:center;gap:0.5rem}
+.details-bar .divider{width:1px;height:16px;background:var(--border)}
+
+/* EXCERPT */
+.chapter-label{
+font-family:var(--mono);font-size:11px;color:var(--amber);
+letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1.5rem;
+}
+.excerpt-text{
+font-size:17px;line-height:1.9;color:rgba(232,228,220,0.9);
+max-width:640px;margin:0 auto;
+}
+.excerpt-text p{margin-bottom:1.5rem}
+.excerpt-fade{
+position:relative;margin-top:-4rem;padding-top:4rem;
+background:linear-gradient(transparent,var(--bg));text-align:center;
+padding-bottom:1rem;
+}
+.excerpt-fade a{
+font-family:var(--mono);font-size:12px;color:var(--amber);
+text-decoration:none;letter-spacing:0.1em;
+}
+.excerpt-fade a:hover{text-decoration:underline}
+
+/* AUTHOR */
+.author-grid{display:grid;grid-template-columns:200px 1fr;gap:2.5rem;align-items:start}
+.author-photo{
+width:200px;height:200px;background:var(--border);
+display:flex;align-items:center;justify-content:center;
+font-family:var(--serif);font-size:48px;color:var(--muted);
+border:1px solid var(--border);
+}
+.author-bio p{font-size:16px;line-height:1.8;margin-bottom:1rem;color:rgba(232,228,220,0.85)}
+.author-links{margin-top:1.5rem;display:flex;gap:1.5rem}
+.author-links a{
+font-family:var(--mono);font-size:11px;color:var(--amber);
+text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;
+}
+.author-links a:hover{text-decoration:underline}
+
+/* CHAPTERS */
+.chapter-grid{
+display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem 2rem;
+}
+.chapter-grid .ch{
+display:flex;gap:1rem;padding:0.5rem 0;
+border-bottom:1px solid rgba(30,37,48,0.5);
+}
+.ch-num{font-family:var(--mono);font-size:13px;color:var(--amber);min-width:24px}
+.ch-title{font-family:var(--body);font-size:15px;color:rgba(232,228,220,0.8)}
+.epilogue{
+text-align:center;margin-top:2.5rem;font-family:var(--body);
+font-style:italic;font-size:16px;color:rgba(232,228,220,0.7);
+}
+.epilogue span{font-family:var(--mono);font-size:13px;color:var(--amber);font-style:normal}
+
+/* RESEARCH */
+.research-body{max-width:640px}
+.research-body h3{
+font-family:var(--serif);font-size:28px;font-weight:700;
+color:var(--text);margin-bottom:1.5rem;
+}
+.research-body p{font-size:16px;line-height:1.8;margin-bottom:1.5rem;color:rgba(232,228,220,0.85)}
+.hex-dump{
+font-family:var(--mono);font-size:9px;color:var(--blue);
+opacity:0.3;line-height:1.6;margin-top:3rem;
+word-break:break-all;max-width:480px;
+user-select:none;
+}
+
+/* CONTACT */
+#contact{text-align:center}
+#contact h3{
+font-family:var(--serif);font-size:28px;font-weight:700;
+color:var(--text);margin-bottom:1rem;
+}
+#contact>p{font-size:16px;color:rgba(232,228,220,0.7);margin-bottom:2rem}
+.email-form{
+display:flex;gap:0;justify-content:center;max-width:440px;margin:0 auto;
+}
+.email-form input{
+flex:1;padding:14px 16px;background:rgba(30,37,48,0.5);
+border:1px solid var(--border);color:var(--text);
+font-family:var(--mono);font-size:13px;outline:none;
+}
+.email-form input::placeholder{color:var(--muted)}
+.email-form input:focus{border-color:var(--amber)}
+.email-form button{
+padding:14px 24px;background:var(--amber);color:var(--bg);border:1px solid var(--amber);
+font-family:var(--mono);font-size:11px;letter-spacing:0.15em;
+text-transform:uppercase;cursor:pointer;transition:background .2s;
+}
+.email-form button:hover{background:#d4b87a}
+.form-fallback{
+font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:1rem;
+}
+.form-fallback a{color:var(--blue);text-decoration:none}
+.form-fallback a:hover{text-decoration:underline}
+.form-success{font-family:var(--mono);font-size:14px;color:var(--amber)}
+.press-line{
+font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:2rem;
+}
+.press-line a{color:var(--blue);text-decoration:none}
+
+/* FOOTER */
+footer{
+text-align:center;padding:3rem 2rem;
+border-top:1px solid var(--border);
+}
+footer p{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:2}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .4s,transform .4s}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.hero-title{font-size:56px}
+.hero-subtitle{font-size:15px}
+nav .links{
+position:fixed;top:56px;left:0;right:0;
+background:rgba(10,12,16,0.98);
+flex-direction:column;padding:1.5rem;gap:1.2rem;
+display:none;border-bottom:1px solid var(--border);
+}
+nav .links.open{display:flex}
+.nav-toggle{display:block}
+.jacket{grid-template-columns:1fr}
+.author-grid{grid-template-columns:1fr;text-align:center}
+.author-photo{margin:0 auto}
+.chapter-grid{grid-template-columns:1fr 1fr}
+.details-bar{flex-direction:column;gap:0.75rem}
+.details-bar .divider{display:none}
+section{padding:4rem 1.25rem}
+}
+@media(max-width:480px){
+.chapter-grid{grid-template-columns:1fr}
+.email-form{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="#" class="wordmark">ONE DISK</a>
+<button class="nav-toggle" aria-label="Menu">&#9776;</button>
+<div class="links">
+<a href="#book">The Book</a>
+<a href="#excerpt">Excerpt</a>
+<a href="#author">Author</a>
+<a href="#chapters">Chapters</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<section class="hero" id="hero">
+<div class="hero-bg"></div>
+<div class="hero-content">
+<div class="hero-tagline">A DISK HE WASN'T SUPPOSED TO FIND.<br>A STORY THEY WILL KILL TO BURY.</div>
+<h1 class="hero-title">ONE DISK</h1>
+<div class="hero-subtitle">A Defense Systems Weekly Novel</div>
+<div class="hero-author">AARON CHRISTOPHER</div>
+<div class="hero-cta">
+<a href="#excerpt" class="btn btn-primary">READ AN EXCERPT</a>
+<a href="#" class="btn btn-secondary">GET THE BOOK</a>
+</div>
+</div>
+<div class="scroll-indicator">
+<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+</div>
+</section>
+
+<div class="full-rule"></div>
+
+<section id="book" class="fade-in">
+<div class="section-label">// THE BOOK</div>
+<div class="logline">
+Washington, D.C. May 1987.<br>
+A 22-year-old journalist finds a floppy disk in a McDonald's bag.<br>
+What's on it will destroy a defense contractor—<br>
+if it doesn't destroy him first.
+</div>
+<div class="section-rule"></div>
+<div class="jacket">
+<div>
+<p>Daniel Murcer arrives in Washington on a Saturday with four hundred dollars, a trunk full of boxes, and a job at the Meridian Institute for Policy Research that starts Monday. He stops at a McDonald's outside Hazleton, Pennsylvania. He orders a Quarter Pounder and apple pie. He doesn't know that the girl behind the register—a nineteen-year-old from Hazleton named Marie Kowalski—has just hidden a floppy disk in his bag.</p>
+</div>
+<div>
+<p>The disk belongs to her brother Tommy, sixteen, a programmer who built something he shouldn't have: a two-stage encryption payload capable of making the Defense Logistics Agency's entire data infrastructure inaccessible. He calls it CIPHER. A defense contractor called Cerberus Systems has taken Tommy to finish the work. They are running out of time.</p>
+<p>Daniel has four days before the program deploys.</p>
+<p>ONE DISK is a literary techno-thriller set in May 1987—a world of pay phones, floppy disks, government procurement, and a newsroom that still uses pencils. It is a story about what it costs to publish the truth before someone decides you shouldn't get the chance.</p>
+</div>
+</div>
+<div class="details-bar">
+<span>&#9633; 64,000 words</span>
+<span class="divider"></span>
+<span>&#9633; May 1987</span>
+<span class="divider"></span>
+<span>&#9633; Washington, D.C.</span>
+</div>
+</section>
+
+<div class="full-rule"></div>
+
+<section id="excerpt" class="fade-in">
+<div class="section-label">// EXCERPT</div>
+<div class="chapter-label">CHAPTER ONE — SOUTHBOUND</div>
+<div class="excerpt-text">
+<p>The Accord smelled like old coffee and carpet. Daniel Murcer had known the smell so long he had stopped noticing it three hours outside Syracuse. The back seat held two cardboard boxes, a duffel bag, and the disorder that accumulates at the end of four years: a lamp without a shade, a damp shower caddy, a framed photograph that had never found a wall and was making another attempt in the dark.</p>
+<p>He had Tracy Kidder in the passenger seat and The Joshua Tree in the deck and four hundred dollars in his wallet, which was the right amount to begin something new with, provided nothing went wrong in the next three days.</p>
+<p>He was twenty-two years old and had a job that started Monday and had not yet learned that these two facts were related.</p>
+</div>
+<hr>
+<div class="chapter-label" style="margin-top:2.5rem">CHAPTER TWO — HAZLETON</div>
+<div class="excerpt-text">
+<p>The McDonald's was the same McDonald's it always was, which was the point of McDonald's.</p>
+<p>He ordered without looking at the menu. Quarter Pounder. Medium fries. Coffee. The girl behind the register punched it in before he finished saying it. Her name tag said Marie. She had dark hair pulled back and the stillness of someone paying more attention than she appeared to be. He noticed this without meaning to: she was too sharp for the room.</p>
+<p>"Anything else?"</p>
+<p>He glanced up at the menu board. "Apple pie."</p>
+<p>"Those take a few minutes. I'll bring it over."</p>
+</div>
+<div class="excerpt-fade">
+<a href="#">CONTINUE READING &rarr;</a>
+</div>
+</section>
+
+<div class="full-rule"></div>
+
+<section id="author" class="fade-in">
+<div class="section-label">// THE AUTHOR</div>
+<div class="author-grid">
+<div class="author-photo">AC</div>
+<div>
+<div class="author-bio">
+<p>Aaron Christopher writes literary thrillers about the spaces between institutional power and individual conscience.</p>
+<p>ONE DISK, his debut novel, is set in Washington, D.C. in May 1987, and draws on research into defense procurement, early computing, government oversight, and the specific weight of decisions made before anyone is watching.</p>
+<p>He is the author of <em>Lake Effect</em>.</p>
+</div>
+<div class="author-links">
+<a href="mailto:contact@placeholder.com">CONTACT</a>
+<a href="#contact">NEWSLETTER</a>
+</div>
+</div>
+</div>
+</section>
+
+<div class="full-rule"></div>
+
+<section id="chapters" class="fade-in">
+<div class="section-label">// THIRTY-SEVEN CHAPTERS</div>
+<div class="chapter-grid">
+<div class="ch"><span class="ch-num">01</span><span class="ch-title">Southbound</span></div>
+<div class="ch"><span class="ch-num">02</span><span class="ch-title">Hazleton</span></div>
+<div class="ch"><span class="ch-num">03</span><span class="ch-title">Recovery</span></div>
+<div class="ch"><span class="ch-num">04</span><span class="ch-title">Mile Marker 149</span></div>
+<div class="ch"><span class="ch-num">05</span><span class="ch-title">Pete's Couch</span></div>
+<div class="ch"><span class="ch-num">06</span><span class="ch-title">Disk Examined</span></div>
+<div class="ch"><span class="ch-num">07</span><span class="ch-title">Sunday in a New City</span></div>
+<div class="ch"><span class="ch-num">08</span><span class="ch-title">First Day</span></div>
+<div class="ch"><span class="ch-num">09</span><span class="ch-title">What Frank Knows</span></div>
+<div class="ch"><span class="ch-num">10</span><span class="ch-title">Piney Branch Road</span></div>
+<div class="ch"><span class="ch-num">11</span><span class="ch-title">Client List</span></div>
+<div class="ch"><span class="ch-num">12</span><span class="ch-title">Girl from Hazleton</span></div>
+<div class="ch"><span class="ch-num">13</span><span class="ch-title">Late Night Visit</span></div>
+<div class="ch"><span class="ch-num">14</span><span class="ch-title">Karen Yuen</span></div>
+<div class="ch"><span class="ch-num">15</span><span class="ch-title">No Physical Evidence</span></div>
+<div class="ch"><span class="ch-num">16</span><span class="ch-title">Tysons Corner</span></div>
+<div class="ch"><span class="ch-num">17</span><span class="ch-title">The Meridian Boy</span></div>
+<div class="ch"><span class="ch-num">18</span><span class="ch-title">Maintenance Window</span></div>
+<div class="ch"><span class="ch-num">19</span><span class="ch-title">Forced Entry</span></div>
+<div class="ch"><span class="ch-num">20</span><span class="ch-title">The Collector</span></div>
+<div class="ch"><span class="ch-num">21</span><span class="ch-title">The Wrong Questions</span></div>
+<div class="ch"><span class="ch-num">22</span><span class="ch-title">Prince William County</span></div>
+<div class="ch"><span class="ch-num">23</span><span class="ch-title">Frank's Memory</span></div>
+<div class="ch"><span class="ch-num">24</span><span class="ch-title">Pete's Story</span></div>
+<div class="ch"><span class="ch-num">25</span><span class="ch-title">The Lock Collection</span></div>
+<div class="ch"><span class="ch-num">26</span><span class="ch-title">Twenty Seconds</span></div>
+<div class="ch"><span class="ch-num">27</span><span class="ch-title">Rehearsal</span></div>
+<div class="ch"><span class="ch-num">28</span><span class="ch-title">Revision</span></div>
+<div class="ch"><span class="ch-num">29</span><span class="ch-title">Going to Press</span></div>
+<div class="ch"><span class="ch-num">30</span><span class="ch-title">Publication</span></div>
+<div class="ch"><span class="ch-num">31</span><span class="ch-title">The Article</span></div>
+<div class="ch"><span class="ch-num">32</span><span class="ch-title">Premature</span></div>
+<div class="ch"><span class="ch-num">33</span><span class="ch-title">Mistakes</span></div>
+<div class="ch"><span class="ch-num">34</span><span class="ch-title">Manassas</span></div>
+<div class="ch"><span class="ch-num">35</span><span class="ch-title">Control</span></div>
+<div class="ch"><span class="ch-num">36</span><span class="ch-title">Statements</span></div>
+<div class="ch"><span class="ch-num">37</span><span class="ch-title">Quiet Systems</span></div>
+</div>
+<div class="epilogue"><span>EPILOGUE</span> &mdash; Southbound</div>
+</section>
+
+<div class="full-rule"></div>
+
+<section id="research" class="fade-in">
+<div class="section-label">// MAY 1987</div>
+<div class="research-body">
+<h3>Period Accuracy</h3>
+<p>ONE DISK is set in May 1987. Every technology, institution, and cultural reference in the novel is period-accurate.</p>
+<p>Daniel uses IBM XT and AT computers. The disk is a 3.5-inch Sony floppy—newer in 1987, consistent with a technically sophisticated teenager. CIPHER's architecture—a two-stage payload hiding a keyfile in sectors outside the FAT directory structure—is technically plausible for 1987 hardware and a programmer working alone.</p>
+<p>The Defense Logistics Agency operated out of Cameron Station, Virginia and leased space at New Carrollton. The GSA scheduling system existed. The House Defense Oversight Subcommittee existed. Defense Systems Weekly is fictional, but the publication category was real.</p>
+<p>Paul Simon's Graceland was released in August 1986. U2's The Joshua Tree was released in March 1987. Both appear in the novel because Daniel Murcer is driving south in May 1987 with the right music for the decade he's about to leave behind.</p>
+</div>
+<div class="hex-dump" aria-hidden="true">4F 4E 45 20 44 49 53 4B 20 2D 20 43 49 50 48 45 52 20 50 41 59 4C 4F 41 44 20 2D 20 53 45 43 54 4F 52 20 30 78 31 41 33 46 20 2D 20 46 41 54 20 4F 46 46 53 45 54 20 30 30 30 30 3A 30 30 34 30 20 2D 20 4B 45 59 46 49 4C 45 20 48 49 44 44 45 4E 20 2D 20 54 57 4F 20 53 54 41 47 45 20 45 4E 43 52 59 50 54 49 4F 4E 20 2D 20 44 4C 41 20 49 4E 46 52 41 53 54 52 55 43 54 55 52 45 20 2D 20 43 45 52 42 45 52 55 53 20 53 59 53 54 45 4D 53 20 2D 20 4D 41 59 20 31 39 38 37</div>
+</section>
+
+<div class="full-rule"></div>
+
+<section id="contact" class="fade-in">
+<div class="section-label">// CONTACT</div>
+<h3>Stay in the Loop</h3>
+<p>For updates on publication, ARC availability, and new work from Aaron Christopher.</p>
+<form class="email-form" name="newsletter" method="POST" data-netlify="true">
+<input type="hidden" name="form-name" value="newsletter">
+<input type="email" name="email" placeholder="your@email.com" required>
+<button type="submit">NOTIFY ME</button>
+</form>
+<div class="form-fallback">Or email directly: <a href="mailto:contact@placeholder.com">contact@placeholder.com</a></div>
+<hr style="margin:2rem auto;max-width:200px">
+<div class="press-line">For press and rights inquiries: <a href="mailto:contact@placeholder.com">contact@placeholder.com</a></div>
+</section>
+
+<footer>
+<p>ONE DISK &middot; Aaron Christopher &middot; &copy; 2025</p>
+<p>A Defense Systems Weekly Novel</p>
+</footer>
+
+<script>
+// Mobile nav toggle
+document.querySelector('.nav-toggle').addEventListener('click',function(){
+document.querySelector('nav .links').classList.toggle('open');
+});
+document.querySelectorAll('nav .links a').forEach(function(a){
+a.addEventListener('click',function(){document.querySelector('nav .links').classList.remove('open')});
+});
+
+// Intersection Observer for fade-in
+var observer=new IntersectionObserver(function(entries){
+entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(function(el){observer.observe(el)});
+
+// Active nav highlighting
+var sections=document.querySelectorAll('section[id]');
+var navLinks=document.querySelectorAll('nav .links a');
+window.addEventListener('scroll',function(){
+var scrollY=window.pageYOffset;
+sections.forEach(function(s){
+var top=s.offsetTop-80,bot=top+s.offsetHeight;
+var id=s.getAttribute('id');
+navLinks.forEach(function(a){
+if(a.getAttribute('href')==='#'+id){
+if(scrollY>=top&&scrollY<bot)a.classList.add('active');
+else a.classList.remove('active');
+}
+});
+});
+});
+
+// Form success
+var form=document.querySelector('.email-form');
+if(form){
+form.addEventListener('submit',function(e){
+e.preventDefault();
+var data=new FormData(form);
+fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()})
+.then(function(){form.innerHTML='<div class="form-success">You\'re on the list.</div>'})
+.catch(function(){form.innerHTML='<div class="form-success">You\'re on the list.</div>'});
+});
+}
+</script>
+</body>
+</html>
