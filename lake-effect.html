@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lake Effect — Aaron Christopher</title>
+<meta name="description" content="Lake Effect, a Prohibition-era crime novel by Aaron Christopher. Coming Fall 2026. Set in 1926 Chicago and upstate New York.">
+<meta property="og:title" content="Lake Effect — Aaron Christopher">
+<meta property="og:description" content="Lake Effect, a Prohibition-era crime novel by Aaron Christopher. Coming Fall 2026. Set in 1926 Chicago and upstate New York.">
+<meta property="og:image" content="https://chriseron4-ai.github.io/assets/images/LakeEffect1.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chriseron4-ai.github.io/lake-effect.html">
+<link rel="icon" type="image/png" href="assets/images/LakeEffect1.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,400;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#0a0c10;--text:#e8e4dc;--amber:#c8a96e;--blue:#4a7fa5;
+--green:#2a3d2a;--border:#1e2530;--muted:#4a5568;
+--serif:'Playfair Display',Georgia,serif;
+--body:'Source Serif 4',Georgia,serif;
+--mono:'JetBrains Mono','Courier New',monospace;
+}
+html{scroll-behavior:smooth}
+body{
+background:var(--bg);color:var(--text);font-family:var(--body);
+line-height:1.7;-webkit-font-smoothing:antialiased;
+}
+body::before{
+content:'';position:fixed;inset:0;z-index:-1;
+background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+pointer-events:none;
+}
+
+/* NAV */
+nav{
+position:fixed;top:0;left:0;right:0;z-index:100;
+background:rgba(10,12,16,0.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+border-bottom:1px solid var(--border);
+display:flex;align-items:center;justify-content:space-between;
+padding:0 2rem;height:56px;
+}
+nav .wordmark{
+font-family:var(--serif);font-weight:900;font-size:1.1rem;
+color:var(--text);text-decoration:none;letter-spacing:0.05em;
+}
+nav .links{display:flex;gap:1.5rem;align-items:center}
+nav .links a{
+font-family:var(--mono);font-size:11px;color:rgba(232,228,220,0.7);
+text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;
+transition:color .2s;
+}
+nav .links a:hover,nav .links a.active{color:var(--amber)}
+.nav-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+
+/* HERO */
+.hero{
+position:relative;min-height:100vh;
+display:flex;align-items:center;justify-content:center;
+overflow:hidden;padding:80px 2rem 3rem;
+}
+.hero-bg{
+position:absolute;inset:0;
+background:url('assets/images/LakeEffect1.png') center/cover no-repeat;
+opacity:0.12;
+}
+.hero-inner{
+position:relative;z-index:1;display:flex;align-items:center;gap:4rem;
+max-width:1100px;width:100%;
+}
+.hero-cover{flex-shrink:0}
+.hero-cover img{
+width:380px;height:auto;display:block;
+box-shadow:0 8px 60px rgba(0,0,0,0.6),0 0 80px rgba(200,169,110,0.08);
+border:1px solid rgba(30,37,48,0.6);
+}
+.hero-content{text-align:left}
+.hero-tag{
+font-family:var(--mono);font-size:12px;letter-spacing:0.15em;
+color:var(--blue);text-transform:uppercase;margin-bottom:2rem;
+}
+.hero-title{
+font-family:var(--serif);font-weight:900;font-size:86px;
+color:var(--text);text-shadow:0 2px 40px rgba(0,0,0,0.5);
+line-height:1.05;margin-bottom:0.5rem;
+}
+.hero-subtitle{
+font-family:var(--serif);font-style:italic;font-size:18px;
+color:var(--amber);margin-bottom:0.75rem;
+}
+.hero-author{
+font-family:var(--mono);font-size:14px;letter-spacing:0.2em;
+color:var(--text);margin-bottom:2.5rem;
+}
+
+/* SECTIONS */
+section{padding:6rem 2rem;max-width:960px;margin:0 auto}
+.section-label{
+font-family:var(--mono);font-size:11px;color:var(--blue);
+text-transform:uppercase;letter-spacing:0.15em;margin-bottom:2rem;
+}
+.full-rule{max-width:960px;margin:0 auto;height:1px;background:var(--border)}
+hr{border:none;height:1px;background:var(--border);margin:4rem 0}
+
+/* DESCRIPTION */
+.description p{
+font-size:17px;line-height:1.9;color:rgba(232,228,220,0.9);
+max-width:640px;margin-bottom:1.5rem;
+}
+
+/* GENRE TAGS */
+.genre-tags{
+display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:2rem;
+}
+.genre-tags span{
+font-family:var(--mono);font-size:10px;letter-spacing:0.1em;
+text-transform:uppercase;color:var(--amber);
+border:1px solid rgba(200,169,110,0.3);
+padding:6px 14px;
+}
+
+/* CONTACT */
+.signup{text-align:center}
+.signup h3{
+font-family:var(--serif);font-size:28px;font-weight:700;
+color:var(--text);margin-bottom:0.75rem;
+}
+.signup .sub{
+font-size:15px;color:rgba(232,228,220,0.6);margin-bottom:2rem;
+font-family:var(--body);
+}
+.email-form{
+display:flex;gap:0;justify-content:center;max-width:440px;margin:0 auto;
+}
+.email-form input{
+flex:1;padding:14px 16px;background:rgba(30,37,48,0.5);
+border:1px solid var(--border);color:var(--text);
+font-family:var(--mono);font-size:13px;outline:none;
+}
+.email-form input::placeholder{color:var(--muted)}
+.email-form input:focus{border-color:var(--amber)}
+.email-form button{
+padding:14px 24px;background:var(--amber);color:var(--bg);border:1px solid var(--amber);
+font-family:var(--mono);font-size:11px;letter-spacing:0.15em;
+text-transform:uppercase;cursor:pointer;transition:background .2s;
+}
+.email-form button:hover{background:#d4b87a}
+.form-success{font-family:var(--mono);font-size:14px;color:var(--amber)}
+
+/* FOOTER */
+footer{
+text-align:center;padding:3rem 2rem;
+border-top:1px solid var(--border);
+}
+footer p{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:2}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .4s,transform .4s}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.hero-inner{flex-direction:column;gap:2.5rem;text-align:center}
+.hero-content{text-align:center}
+.hero-cover img{width:260px}
+.hero-title{font-size:56px}
+.hero-subtitle{font-size:15px}
+.genre-tags{justify-content:center}
+nav .links{
+position:fixed;top:56px;left:0;right:0;
+background:rgba(10,12,16,0.98);
+flex-direction:column;padding:1.5rem;gap:1.2rem;
+display:none;border-bottom:1px solid var(--border);
+}
+nav .links.open{display:flex}
+.nav-toggle{display:block}
+section{padding:4rem 1.25rem}
+}
+@media(max-width:480px){
+.email-form{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="index.html" class="wordmark">AARON CHRISTOPHER</a>
+<button class="nav-toggle" aria-label="Menu">&#9776;</button>
+<div class="links">
+<a href="index.html">One Disk</a>
+<a href="#about">About</a>
+<a href="#notify">Get Notified</a>
+</div>
+</nav>
+
+<section class="hero" id="hero">
+<div class="hero-bg"></div>
+<div class="hero-inner">
+<div class="hero-cover">
+<img src="assets/images/LakeEffect1.png" alt="Lake Effect book cover" width="380" height="570">
+</div>
+<div class="hero-content">
+<div class="hero-tag">Coming Soon &mdash; Fall 2026</div>
+<h1 class="hero-title">LAKE EFFECT</h1>
+<div class="hero-subtitle">A Prohibition-Era Crime Novel</div>
+<div class="hero-author">AARON CHRISTOPHER</div>
+</div>
+</div>
+</section>
+
+<div class="full-rule"></div>
+
+<section id="about" class="fade-in">
+<div class="section-label">// THE BOOK</div>
+<div class="description">
+<p>Chicago, 1926. Jack Becker is a mechanic with a talent for making cars do things their manufacturers never intended. When the job that was supposed to be temporary becomes something he can't walk away from&mdash;and the woman he can't stop thinking about turns out to be his oldest friend's sister&mdash;Jack finds himself holding the only thing more dangerous than a secret: a reason to stay alive.</p>
+<p>A Prohibition-era crime novel set against the steel-grey winter of Chicago and the lake-effect snow of upstate New York. Lake Effect is the story of loyalty, leverage, and the distance between who you were and who you're trying to become.</p>
+</div>
+<div class="genre-tags">
+<span>Historical Crime</span>
+<span>Prohibition Era</span>
+<span>1920s Chicago</span>
+<span>Literary Thriller</span>
+</div>
+</section>
+
+<div class="full-rule"></div>
+
+<section id="notify" class="signup fade-in">
+<h3>Be the first to know when Lake Effect is available.</h3>
+<p class="sub">No spam. Just a note when the book drops.</p>
+<form class="email-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<input type="email" name="email" placeholder="your@email.com" required>
+<button type="submit">NOTIFY ME</button>
+</form>
+</section>
+
+<footer>
+<p>&copy; 2025 Aaron Christopher. All rights reserved.</p>
+</footer>
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click',function(){
+document.querySelector('nav .links').classList.toggle('open');
+});
+document.querySelectorAll('nav .links a').forEach(function(a){
+a.addEventListener('click',function(){document.querySelector('nav .links').classList.remove('open')});
+});
+
+var observer=new IntersectionObserver(function(entries){
+entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(function(el){observer.observe(el)});
+
+var form=document.querySelector('.email-form');
+if(form){
+form.addEventListener('submit',function(e){
+e.preventDefault();
+var data=new FormData(form);
+fetch(form.action,{method:'POST',body:data,headers:{'Accept':'application/json'}})
+.then(function(r){
+if(r.ok){form.innerHTML='<div class="form-success">You\'re on the list.</div>'}
+else{form.innerHTML='<div class="form-success" style="color:var(--blue)">Something went wrong. Please try again.</div>'}
+})
+.catch(function(){form.innerHTML='<div class="form-success" style="color:var(--blue)">Something went wrong. Please try again.</div>'});
+});
+}
+</script>
+</body>
+</html>
