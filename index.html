@@ -56,26 +56,33 @@ nav .links a:hover,nav .links a.active{color:var(--amber)}
 
 /* HERO */
 .hero{
-position:relative;height:100vh;min-height:600px;
-display:flex;flex-direction:column;justify-content:center;align-items:center;
-text-align:center;overflow:hidden;
+position:relative;min-height:100vh;
+display:flex;align-items:center;justify-content:center;
+overflow:hidden;padding:80px 2rem 3rem;
 }
 .hero-bg{
 position:absolute;inset:0;
 background:url('assets/images/OneDisk1.png') center/cover no-repeat;
+opacity:0.15;
 }
-.hero-bg::after{
-content:'';position:absolute;inset:0;
-background:rgba(10,12,16,0.55);
+.hero-inner{
+position:relative;z-index:1;display:flex;align-items:center;gap:4rem;
+max-width:1100px;width:100%;
 }
-.hero-content{position:relative;z-index:1;padding:0 1.5rem}
+.hero-cover{flex-shrink:0}
+.hero-cover img{
+width:380px;height:auto;display:block;
+box-shadow:0 8px 60px rgba(0,0,0,0.6),0 0 80px rgba(200,169,110,0.08);
+border:1px solid rgba(30,37,48,0.6);
+}
+.hero-content{text-align:left}
 .hero-tagline{
 font-family:var(--mono);font-size:13px;letter-spacing:0.15em;
 color:var(--amber);text-transform:uppercase;margin-bottom:2rem;
 line-height:2;
 }
 .hero-title{
-font-family:var(--serif);font-weight:900;font-size:96px;
+font-family:var(--serif);font-weight:900;font-size:86px;
 color:var(--text);text-shadow:0 2px 40px rgba(0,0,0,0.5);
 line-height:1.05;margin-bottom:0.5rem;
 }
@@ -87,7 +94,7 @@ color:var(--amber);margin-bottom:0.75rem;
 font-family:var(--mono);font-size:14px;letter-spacing:0.2em;
 color:var(--text);margin-bottom:2.5rem;
 }
-.hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
 .btn{
 font-family:var(--mono);font-size:12px;letter-spacing:0.15em;
 text-transform:uppercase;padding:14px 28px;text-decoration:none;
@@ -245,6 +252,10 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:2
 
 /* RESPONSIVE */
 @media(max-width:768px){
+.hero-inner{flex-direction:column;gap:2.5rem;text-align:center}
+.hero-content{text-align:center}
+.hero-cover img{width:260px}
+.hero-cta{justify-content:center}
 .hero-title{font-size:56px}
 .hero-subtitle{font-size:15px}
 nav .links{
@@ -285,6 +296,10 @@ section{padding:4rem 1.25rem}
 
 <section class="hero" id="hero">
 <div class="hero-bg"></div>
+<div class="hero-inner">
+<div class="hero-cover">
+<img src="assets/images/OneDisk1.png" alt="One Disk book cover" width="380" height="570">
+</div>
 <div class="hero-content">
 <div class="hero-tagline">A DISK HE WASN'T SUPPOSED TO FIND.<br>A STORY THEY WILL KILL TO BURY.</div>
 <h1 class="hero-title">ONE DISK</h1>
@@ -293,6 +308,7 @@ section{padding:4rem 1.25rem}
 <div class="hero-cta">
 <a href="#excerpt" class="btn btn-primary">READ AN EXCERPT</a>
 <a href="#" class="btn btn-secondary">GET THE BOOK</a>
+</div>
 </div>
 </div>
 <div class="scroll-indicator">
