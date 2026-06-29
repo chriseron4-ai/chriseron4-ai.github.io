@@ -175,18 +175,48 @@ text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;
 }
 .author-links a:hover{text-decoration:underline}
 
-/* RESEARCH */
-.research-body{max-width:640px}
-.research-body h3{
+/* THE QUESTION */
+.question-body{max-width:640px}
+.question-body h3{
 font-family:var(--serif);font-size:28px;font-weight:700;
-color:var(--text);margin-bottom:1.5rem;
+color:var(--text);margin-bottom:0.75rem;
 }
-.research-body p{font-size:16px;line-height:1.8;margin-bottom:1.5rem;color:rgba(232,228,220,0.85)}
-.hex-dump{
-font-family:var(--mono);font-size:9px;color:var(--blue);
-opacity:0.3;line-height:1.6;margin-top:3rem;
-word-break:break-all;max-width:480px;
-user-select:none;
+.question-body .subheading{
+font-family:var(--serif);font-style:italic;font-size:16px;
+color:var(--amber);margin-bottom:2rem;line-height:1.7;
+}
+.question-body p{font-size:16px;line-height:1.8;margin-bottom:1.5rem;color:rgba(232,228,220,0.85)}
+.pull-quote{
+border-left:3px solid var(--amber);padding:1.5rem 2rem;
+margin:3rem auto;max-width:640px;
+}
+.pull-quote blockquote{
+font-family:var(--serif);font-size:22px;font-style:italic;
+color:var(--text);line-height:1.6;
+}
+.pull-quote .attribution{
+font-family:var(--mono);font-size:12px;color:var(--muted);
+margin-top:0.75rem;letter-spacing:0.05em;
+}
+.contrast-grid{
+display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;
+margin-top:2.5rem;
+}
+.contrast-box{
+border:1px solid var(--border);padding:1.5rem;
+background:rgba(30,37,48,0.3);
+}
+.contrast-box .box-label{
+font-family:var(--mono);font-size:11px;letter-spacing:0.15em;
+text-transform:uppercase;margin-bottom:1rem;
+}
+.contrast-box .box-label.amber{color:var(--amber)}
+.contrast-box .box-label.blue{color:var(--blue)}
+.contrast-box p{font-size:15px;line-height:1.8;color:rgba(232,228,220,0.8)}
+.closing-line{
+text-align:center;margin-top:3rem;
+font-family:var(--mono);font-size:12px;color:var(--muted);
+letter-spacing:0.1em;
 }
 
 /* CONTACT */
@@ -253,6 +283,7 @@ nav .links.open{display:flex}
 .jacket{grid-template-columns:1fr}
 .author-grid{grid-template-columns:1fr;text-align:center}
 .author-photo{margin:0 auto}
+.contrast-grid{grid-template-columns:1fr}
 .details-bar{flex-direction:column;gap:0.75rem}
 .details-bar .divider{display:none}
 section{padding:4rem 1.25rem}
@@ -271,6 +302,7 @@ section{padding:4rem 1.25rem}
 <a href="#book">The Book</a>
 <a href="#excerpt">Excerpt</a>
 <a href="#author">Author</a>
+<a href="#the-question">The Question</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
@@ -384,16 +416,30 @@ if it doesn't destroy him first.
 
 <div class="full-rule"></div>
 
-<section id="research" class="fade-in">
-<div class="section-label">// MAY 1987</div>
-<div class="research-body">
-<h3>Period Accuracy</h3>
-<p>ONE DISK is set in May 1987. Every technology, institution, and cultural reference in the novel is period-accurate.</p>
-<p>Daniel uses IBM XT and AT computers. The disk is a 3.5-inch Sony floppy—newer in 1987, consistent with a technically sophisticated teenager. CIPHER's architecture—a two-stage payload hiding a keyfile in sectors outside the FAT directory structure—is technically plausible for 1987 hardware and a programmer working alone.</p>
-<p>The Defense Logistics Agency operated out of Cameron Station, Virginia and leased space at New Carrollton. The GSA scheduling system existed. The House Defense Oversight Subcommittee existed. Defense Systems Weekly is fictional, but the publication category was real.</p>
-<p>Paul Simon's Graceland was released in August 1986. U2's The Joshua Tree was released in March 1987. Both appear in the novel because Daniel Murcer is driving south in May 1987 with the right music for the decade he's about to leave behind.</p>
+<section id="the-question" class="fade-in">
+<div class="section-label">// THE QUESTION</div>
+<div class="question-body">
+<h3>Where Did Ransomware Come From?</h3>
+<div class="subheading">The history says 1989. One Disk asks: what if it started earlier&mdash;and what if only one person understood what it was?</div>
+<p>The first documented ransomware attack is usually dated to 1989: the AIDS Trojan, distributed by Joseph Popp on floppy disks mailed to researchers at the World Health Organization. The program encrypted filenames and demanded payment to restore access. It was crude. It was effective. It changed everything that came after.</p>
+<p>But software doesn't require publication to exist. A sixteen-year-old in Hazleton, Pennsylvania, working alone on an IBM AT with access to technical documentation and enough time, could have built something like CIPHER two years earlier. The architecture was there. The vulnerability was there. What was missing was someone who understood what it was worth.</p>
+<p>ONE DISK is a work of fiction. But it takes seriously a question that the history of cybercrime doesn't answer: what happens when a weapon is invented before the world has a name for it&mdash;and the only person who truly grasps its power is the one who wants to use it?</p>
 </div>
-<div class="hex-dump" aria-hidden="true">4F 4E 45 20 44 49 53 4B 20 2D 20 43 49 50 48 45 52 20 50 41 59 4C 4F 41 44 20 2D 20 53 45 43 54 4F 52 20 30 78 31 41 33 46 20 2D 20 46 41 54 20 4F 46 46 53 45 54 20 30 30 30 30 3A 30 30 34 30 20 2D 20 4B 45 59 46 49 4C 45 20 48 49 44 44 45 4E 20 2D 20 54 57 4F 20 53 54 41 47 45 20 45 4E 43 52 59 50 54 49 4F 4E 20 2D 20 44 4C 41 20 49 4E 46 52 41 53 54 52 55 43 54 55 52 45 20 2D 20 43 45 52 42 45 52 55 53 20 53 59 53 54 45 4D 53 20 2D 20 4D 41 59 20 31 39 38 37</div>
+<div class="pull-quote">
+<blockquote>&ldquo;The boy had never trusted perfect execution. He had trusted verification.&rdquo;</blockquote>
+<div class="attribution">&mdash; ONE DISK, Chapter 32</div>
+</div>
+<div class="contrast-grid">
+<div class="contrast-box">
+<div class="box-label amber">TOMMY KOWALSKI, 16</div>
+<p>Built CIPHER in his bedroom in Hazleton, Pennsylvania. Two-stage payload. Keyfile hidden outside the FAT directory structure. A timer, not a trigger. He built in a safeguard because he didn't trust perfect execution. He trusted verification. He was right about that.</p>
+</div>
+<div class="contrast-box">
+<div class="box-label blue">RICHARD VANCE</div>
+<p>CEO, Cerberus Systems. Tysons Corner, Virginia. He collected locks. He understood, better than anyone in the room, what the boy had actually built. Not a program. Not a vulnerability. A key that worked on every door at once. He called it an asset.</p>
+</div>
+</div>
+<div class="closing-line">CIPHER is fictional. The question it raises is not.</div>
 </section>
 
 <div class="full-rule"></div>
