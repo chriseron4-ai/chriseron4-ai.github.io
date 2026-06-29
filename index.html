@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>One Disk — Aaron Christopher</title>
-<meta name="description" content="A disk he wasn't supposed to find. A story they will kill to bury. A literary techno-thriller. May 1987. Washington, D.C.">
-<meta property="og:title" content="One Disk — Aaron Christopher">
-<meta property="og:description" content="A disk he wasn't supposed to find. A story they will kill to bury. A literary techno-thriller. May 1987. Washington, D.C.">
+<title>Aaron Christopher — Author</title>
+<meta name="description" content="Aaron Christopher writes literary thrillers. One Disk, a techno-thriller set in May 1987, releases July 4, 2026. Lake Effect coming Fall 2026.">
+<meta property="og:title" content="Aaron Christopher — Author">
+<meta property="og:description" content="Aaron Christopher writes literary thrillers. One Disk releases July 4, 2026. Lake Effect coming Fall 2026.">
 <meta property="og:image" content="https://chriseron4-ai.github.io/assets/images/OneDisk1.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://chriseron4-ai.github.io">
@@ -253,6 +253,31 @@ font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:2rem;
 }
 .press-line a{color:var(--blue);text-decoration:none}
 
+/* ALSO BY */
+.also-by{text-align:center}
+.also-by-inner{
+display:flex;align-items:center;gap:3rem;
+max-width:800px;margin:0 auto;text-align:left;
+}
+.also-by-cover{flex-shrink:0}
+.also-by-cover img{
+width:200px;height:auto;display:block;
+box-shadow:0 4px 30px rgba(0,0,0,0.5);
+border:1px solid rgba(30,37,48,0.6);
+}
+.also-by-content h3{
+font-family:var(--serif);font-size:28px;font-weight:700;
+color:var(--text);margin-bottom:0.5rem;
+}
+.also-by-content .coming{
+font-family:var(--mono);font-size:12px;letter-spacing:0.15em;
+color:var(--blue);text-transform:uppercase;margin-bottom:1rem;
+}
+.also-by-content p{
+font-size:16px;line-height:1.8;color:rgba(232,228,220,0.85);
+margin-bottom:1.5rem;
+}
+
 /* FOOTER */
 footer{
 text-align:center;padding:3rem 2rem;
@@ -284,6 +309,8 @@ nav .links.open{display:flex}
 .author-grid{grid-template-columns:1fr;text-align:center}
 .author-photo{margin:0 auto}
 .contrast-grid{grid-template-columns:1fr}
+.also-by-inner{flex-direction:column;text-align:center}
+.also-by-cover img{width:160px;margin:0 auto}
 .details-bar{flex-direction:column;gap:0.75rem}
 .details-bar .divider{display:none}
 section{padding:4rem 1.25rem}
@@ -296,12 +323,12 @@ section{padding:4rem 1.25rem}
 <body>
 
 <nav>
-<a href="#" class="wordmark">ONE DISK</a>
+<a href="#" class="wordmark">AARON CHRISTOPHER</a>
 <button class="nav-toggle" aria-label="Menu">&#9776;</button>
 <div class="links">
-<a href="#book">The Book</a>
+<a href="#book">One Disk</a>
 <a href="#excerpt">Excerpt</a>
-<a href="#author">Author</a>
+<a href="#author">About</a>
 <a href="#the-question">The Question</a>
 <a href="#contact">Contact</a>
 <a href="lake-effect.html">Lake Effect</a>
@@ -319,6 +346,7 @@ section{padding:4rem 1.25rem}
 <h1 class="hero-title">ONE DISK</h1>
 <div class="hero-subtitle">A Defense Systems Weekly Novel</div>
 <div class="hero-author">AARON CHRISTOPHER</div>
+<div class="hero-tag" style="font-family:var(--mono);font-size:12px;letter-spacing:0.15em;color:var(--blue);text-transform:uppercase;margin-bottom:2rem">RELEASING JULY 4, 2026</div>
 <div class="hero-cta">
 <a href="#excerpt" class="btn btn-primary">READ AN EXCERPT</a>
 <a href="#" class="btn btn-secondary">GET THE BOOK</a>
@@ -445,6 +473,23 @@ if it doesn't destroy him first.
 
 <div class="full-rule"></div>
 
+<section id="lake-effect" class="also-by fade-in">
+<div class="section-label">// ALSO BY AARON CHRISTOPHER</div>
+<div class="also-by-inner">
+<div class="also-by-cover">
+<a href="lake-effect.html"><img src="assets/images/LakeEffect1.png" alt="Lake Effect book cover" width="200" height="300"></a>
+</div>
+<div class="also-by-content">
+<h3>Lake Effect</h3>
+<div class="coming">Coming Soon &mdash; Fall 2026</div>
+<p>Chicago, 1926. A mechanic with a talent for making cars do things their manufacturers never intended. A job that was supposed to be temporary. A woman who turns out to be his oldest friend's sister. A Prohibition-era crime novel set against the steel-grey winter of Chicago and the lake-effect snow of upstate New York.</p>
+<a href="lake-effect.html" class="btn btn-secondary">LEARN MORE</a>
+</div>
+</div>
+</section>
+
+<div class="full-rule"></div>
+
 <section id="contact" class="fade-in">
 <div class="section-label">// CONTACT</div>
 <h3>Stay in the Loop</h3>
@@ -459,8 +504,7 @@ if it doesn't destroy him first.
 </section>
 
 <footer>
-<p>ONE DISK &middot; Aaron Christopher &middot; &copy; 2025</p>
-<p>A Defense Systems Weekly Novel</p>
+<p>&copy; 2025 Aaron Christopher. All rights reserved.</p>
 </footer>
 
 <script>
