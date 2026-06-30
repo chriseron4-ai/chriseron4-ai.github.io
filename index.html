@@ -494,10 +494,11 @@ if it doesn't destroy him first.
 <div class="section-label">// CONTACT</div>
 <h3>Stay in the Loop</h3>
 <p>For updates on publication, ARC availability, and new work from Aaron Christopher.</p>
-<form class="email-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-<input type="email" name="email" placeholder="your@email.com" required>
+<form class="email-form" id="signup-form">
+<input type="email" id="email" placeholder="your@email.com" required>
 <button type="submit">NOTIFY ME</button>
 </form>
+<p class="form-success" id="signup-message" style="margin-top:1rem"></p>
 <div class="form-fallback">Or email directly: <a href="mailto:contact@placeholder.com">contact@placeholder.com</a></div>
 <hr style="margin:2rem auto;max-width:200px">
 <div class="press-line">For press and rights inquiries: <a href="mailto:contact@placeholder.com">contact@placeholder.com</a></div>
@@ -539,18 +540,37 @@ else a.classList.remove('active');
 });
 });
 
-// Form success (Formspree)
-var form=document.querySelector('.email-form');
-if(form){
-form.addEventListener('submit',function(e){
+// Newsletter signup (AWS API)
+var signupForm=document.getElementById('signup-form');
+if(signupForm){
+signupForm.addEventListener('submit',async function(e){
 e.preventDefault();
-var data=new FormData(form);
-fetch(form.action,{method:'POST',body:data,headers:{'Accept':'application/json'}})
-.then(function(r){
-if(r.ok){form.innerHTML='<div class="form-success">You\'re on the list.</div>'}
-else{form.innerHTML='<div class="form-success" style="color:var(--blue)">Something went wrong. Please try again.</div>'}
-})
-.catch(function(){form.innerHTML='<div class="form-success" style="color:var(--blue)">Something went wrong. Please try again.</div>'});
+var emailInput=document.getElementById('email');
+var messageEl=document.getElementById('signup-message');
+var button=signupForm.querySelector('button');
+button.disabled=true;
+messageEl.style.color='';
+messageEl.textContent='Signing up...';
+try{
+var res=await fetch('https://01grthre6k.execute-api.us-east-2.amazonaws.com/signup',{
+method:'POST',
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify({email:emailInput.value})
+});
+var data=await res.json().catch(function(){return{}});
+if(res.ok){
+messageEl.textContent='Thanks for signing up! Check your inbox.';
+emailInput.value='';
+}else{
+messageEl.style.color='var(--blue)';
+messageEl.textContent=data.message||'Something went wrong. Please try again.';
+}
+}catch(err){
+messageEl.style.color='var(--blue)';
+messageEl.textContent='Something went wrong. Please try again.';
+}finally{
+button.disabled=false;
+}
 });
 }
 </script>
